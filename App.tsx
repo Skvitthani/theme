@@ -1,14 +1,17 @@
-import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
+import {LogBox} from 'react-native';
+import StackNavigate from './src/navigation/StackNavigate';
+import {ThemeContext} from './src/components/ColorContex';
+
+LogBox.ignoreAllLogs();
+LogBox.ignoreLogs(['Warning: ...']);
 
 const App = () => {
   return (
-    <View>
-      <Text>App</Text>
-    </View>
+    <ThemeContext>
+      <StackNavigate />
+    </ThemeContext>
   );
 };
 
 export default App;
-
-const styles = StyleSheet.create({});
